@@ -29,9 +29,9 @@ int main() {
         printf("%d",num);
         send(clientsocket,&num,sizeof(num),0);
 
-        int reversed;
-        recv(clientsocket,&reversed,sizeof(reversed),0);
-        printf("Rversed no is:%d",reversed);
+        char msg[100];
+        recv(clientsocket,&msg,sizeof(msg),0);
+        printf("%s",msg);
         
     // }
 
