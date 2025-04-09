@@ -10,7 +10,7 @@
 
 int reverse_num(int num) {
     int d;int rev = 0;
-    while(num < 0) {
+    while(num > 0) {
         d = num % 10;
         rev = (rev * 10) + d;
         num = num / 10;
@@ -43,6 +43,8 @@ int main() {
 
         int reversed = reverse_num(num);
         printf("Reversed num %d",reversed);
+        
+        send(clientsocket,&reversed,sizeof(reversed),0);
     // }
 
     close(clientsocket);
